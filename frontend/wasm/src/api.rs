@@ -14,6 +14,11 @@ use editor::LayerId;
 use editor::{message_prelude::*, Color};
 use wasm_bindgen::prelude::*;
 
+#[wasm_bindgen]
+pub fn wasm_memory() -> JsValue {
+	wasm_bindgen::memory()
+}
+
 /// Modify the currently selected tool in the document state store
 #[wasm_bindgen]
 pub fn select_tool(tool: String) -> Result<(), JsValue> {
